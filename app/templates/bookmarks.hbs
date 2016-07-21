@@ -1,17 +1,18 @@
 {{#link-to 'index'}}
-Index
+  Index
 {{/link-to}}
 {{#link-to 'blogs'}}
-Blogs
+  Blogs
 {{/link-to}}
 {{#link-to 'bookmarks'}}
-Bookmarks
+  Bookmarks
 {{/link-to}}
 {{#link-to 'contacts'}}
-Contacts
+  Contacts
 {{/link-to}}
+{{log model}}
 
-<form>
+<form {{action "enteredInfo" on="submit"}}>
   <p>
     <label>Nickname</label>
     {{input type="text" value=nickname}}
@@ -25,13 +26,13 @@ Contacts
   <button>Submit</button>
 </form>
 
-<ul class="extra-links">
-<li><a href="https://www.google.com/">Fix these later, Jeff!</a></li>
-<li><a href="https://www.google.com/">Fix these later, Jeff!</a></li>
-<li><a href="https://www.google.com/">Fix these later, Jeff!</a></li>
-<li><a href="https://www.google.com/">Fix these later, Jeff!</a></li>
-<li><a href="https://www.google.com/">Fix these later, Jeff!</a></li>
+<ul>
+{{#each model as |input|}}
+  <li><a href="{{ input.url }}">{{ input.nickname}}</a></li>
+  <button {{action "deleteBm" input on="click"}} type="submit" name="button">DELETE</button>
+{{/each}}
 </ul>
+
 
 
 
