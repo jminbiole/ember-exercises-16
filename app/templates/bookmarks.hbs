@@ -1,1 +1,39 @@
+{{#link-to 'index'}}
+Index
+{{/link-to}}
+{{#link-to 'blogs'}}
+Blogs
+{{/link-to}}
+{{#link-to 'bookmarks'}}
+Bookmarks
+{{/link-to}}
+{{#link-to 'contacts'}}
+Contacts
+{{/link-to}}
+
+<form>
+  <p>
+    <label>Nickname</label>
+    {{input type="text" value=nickname}}
+  </p>
+
+  <p>
+    <label>URL</label>
+    {{input type="text" value=url}}
+  </p>
+
+  <button>Submit</button>
+</form>
+
+<ul class="extra-links">
+<li><a href="https://www.google.com/">Fix these later, Jeff!</a></li>
+<li><a href="https://www.google.com/">Fix these later, Jeff!</a></li>
+<li><a href="https://www.google.com/">Fix these later, Jeff!</a></li>
+<li><a href="https://www.google.com/">Fix these later, Jeff!</a></li>
+<li><a href="https://www.google.com/">Fix these later, Jeff!</a></li>
+</ul>
+
+
+
+
 {{outlet}}
