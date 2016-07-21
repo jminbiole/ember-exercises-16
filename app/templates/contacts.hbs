@@ -16,13 +16,13 @@ Contacts
 {{#link-to 'index' }}<button type="button"class="create-btn">Create New Contact</button>{{/link-to}}
 </div>
 
-<div class="ppl-info" {{action "deletePerson" person}}>
+<div class="ppl-info" >
   {{#each model as |info|}}
-  <h1 class="contacts-h1">{{info.first}}</h1>
-  <h4 class="contacts-h4">{{info.phone}}</h4>
-  <h4 class="contacts-h4">{{info.address}}</h4>
-  <button class="delete-btn" >Delete them for existence</button>
-{{/each}}
+    <h1 class="contacts-h1">{{info.first}}</h1>
+    <h4 class="contacts-h4">{{info.phone}}</h4>
+    <h4 class="contacts-h4">{{info.address}}</h4>
+    <button class="delete-btn" {{action "deletePerson" info}}>Delete them for existence</button>
+  {{/each}}
 </div>
 
 
