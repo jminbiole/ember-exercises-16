@@ -1,0 +1,55 @@
+{{#link-to 'index'}}
+Index
+{{/link-to}}
+{{#link-to 'blogs'}}
+Blogs
+{{/link-to}}
+{{#link-to 'bookmarks'}}
+Bookmarks
+{{/link-to}}
+{{#link-to 'contacts'}}
+Contacts
+{{/link-to}}
+{{log model}}
+
+<div class="create">
+    <p{{action 'seeContacts'}}>Add to the List</p>
+    {{#if showingContacts}}
+    <form class="contacts-form"{{action "infoInput" on="submit"}}>
+      <p>
+        <label>First</label>
+        {{input type="text" value=first}}
+      </p>
+
+      <p>
+        <label>Last</label>
+        {{input type="text" value=last}}
+      </p>
+
+      <p>
+        <label>Address</label>
+        {{input type="text" value=address}}
+      </p>
+
+      <p>
+        <label>Phone</label>
+        {{input type="text" value=phone}}
+      </p>
+
+      <button>Submit</button>
+    </form>
+    {{/if}}
+</div>
+
+<div class="ppl-info" >
+  {{#each model as |info|}}
+    <h1 class="contacts-h1">{{info.first}}</h1>
+    <h1 class="contacts-h1">{{info.last}}</h1>
+    <h4 class="contacts-h4">{{info.phone}}</h4>
+    <h4 class="contacts-h4">{{info.address}}</h4>
+    <button class="delete-btn" {{action "deletePerson" info}}>Delete them from existence</button>
+  {{/each}}
+</div>
+
+
+{{outlet}}

@@ -1,0 +1,39 @@
+{{#link-to 'index'}}
+Index
+{{/link-to}}
+{{#link-to 'blogs'}}
+Blogs
+{{/link-to}}
+{{#link-to 'bookmarks'}}
+Bookmarks
+{{/link-to}}
+{{#link-to 'contacts'}}
+Contacts
+{{/link-to}}
+{{log model}}
+
+<form {{action "infoInput" on="submit"}}>
+  <p>
+    <label>First</label>
+    {{input type="text" value=data.first}}
+  </p>
+
+  <p>
+    <label>Last</label>
+    {{input type="text" value=last}}
+  </p>
+
+  <p>
+    <label>Address</label>
+    {{input type="text" value=address}}
+  </p>
+
+  <p>
+    <label>Phone</label>
+    {{input type="text" value=phone}}
+  </p>
+
+  <button>Submit</button>
+</form>
+
+{{outlet}}
